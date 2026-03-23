@@ -9,6 +9,17 @@ Validate `mcp-macos-colima` consistently across Claude Code, GitHub Copilot Chat
 - MCP command: `uv run mcp-colima`
 - Reports root: `test_reports/mcp_colima/`
 
+## Python Environment Prerequisites
+
+- UV must be installed before running setup or MCP server commands.
+
+Install/check UV:
+
+```bash
+brew install uv
+uv --version
+```
+
 ## Setup
 
 ```bash
@@ -18,6 +29,16 @@ uv venv
 source .venv/bin/activate
 uv sync --extra dev
 ```
+
+`uv sync --extra dev` is mandatory so all required runtime and test modules are installed.
+
+## MCP Client Connection
+
+If the MCP server is not already configured in your client, add it with:
+
+- command: `uv`
+- args: `run mcp-colima`
+- working directory: repository root (`mcp-macos-colima`)
 
 ## Test Scope
 
@@ -66,6 +87,8 @@ All tool responses must be parseable JSON and should include standard fields:
 - `test_reports/mcp_colima/copilot/mcp-client-results-<date>.md`
 - `test_reports/mcp_colima/codex/mcp-client-results-<date>.md`
 - `test_reports/mcp_colima/gemini/mcp-client-results-<date>.md`
+
+Create the directory when needed, then write the report file under the matching client path.
 
 ## Required Report Sections
 
