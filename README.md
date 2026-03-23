@@ -1,4 +1,4 @@
-# mcp-colima
+# mcp-macos-colima
 
 FastMCP server for core Colima operations on macOS.
 
@@ -21,25 +21,26 @@ Phase 1 tools:
 - Python 3.11+
 - UV package manager
 
-## Setup
+## Clone And Setup
 
 ```bash
-cd mcp/colima-macos-mcp
+git clone git@github.com:ianscrivener/mcp-macos-colima.git
+cd mcp-macos-colima
 uv venv
 source .venv/bin/activate
 uv sync --extra dev
 ```
 
-## Run
+## Run MCP Server
 
 ```bash
 source .venv/bin/activate
 uv run mcp-colima
 ```
 
-FastMCP defaults to stdio transport for MCP clients like Claude Desktop and Claude Code.
+FastMCP defaults to stdio transport, suitable for MCP clients such as Claude Code.
 
-## Tests
+## Test
 
 ```bash
 source .venv/bin/activate
@@ -47,9 +48,32 @@ uv run pytest -m "not integration" --cov=. --cov-report=term-missing
 uv run pytest --cov=. --cov-report=term-missing
 ```
 
+Client reports should be stored under:
+
+- `test_reports/mcp_colima/claude_code/`
+- `test_reports/mcp_colima/copilot/`
+- `test_reports/mcp_colima/codex/`
+- `test_reports/mcp_colima/gemini/`
+
+## GitHub Workflow
+
+Pull latest:
+
+```bash
+git checkout main
+git pull origin main
+```
+
+Push changes:
+
+```bash
+git add -A
+git commit -m "<summary>"
+git push origin main
+```
+
 ## Notes
 
-- Tool responses are always parseable JSON objects.
+- Tool responses are parseable JSON objects.
 - Non-zero CLI exits are normalized into `{ "error": true, ... }` responses.
 - `colima_ssh` is one-shot and requires a command string.
-# mcp-macos-colima
