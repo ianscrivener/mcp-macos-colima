@@ -373,14 +373,13 @@ class TestColimaSSH:
     def test_ssh_default_profile(self):
         self.tool(command="uname -a")
         args = self.cli.run.call_args[0][0]
-        # positional profile name, not --profile flag
-        assert args == ["ssh", "default", "--", "sh", "-lc", "uname -a"]
+        assert args == ["ssh", "--profile", "default", "--", "sh", "-lc", "uname -a"]
 
     def test_ssh_named_profile(self):
         self.tool(command="ls /", profile="dev")
         args = self.cli.run.call_args[0][0]
-        assert args[1] == "dev"
-        assert "--profile" not in args
+        assert args[2] == "dev"
+        assert "--profile" in args
 
     def test_ssh_command_passed_through(self):
         self.tool(command="echo hello")

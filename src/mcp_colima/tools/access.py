@@ -26,4 +26,7 @@ def register_access_tools(mcp: FastMCP, cli: ColimaCLI) -> None:
             timeout_seconds: Maximum seconds to wait for the command to complete.
         """
         name = normalize_profile(profile)
-        return cli.run(["ssh", name, "--", "sh", "-lc", command], timeout_seconds=timeout_seconds)
+        return cli.run(
+            ["ssh", "--profile", name, "--", "sh", "-lc", command],
+            timeout_seconds=timeout_seconds,
+        )

@@ -1,2 +1,12 @@
-{"mcpServers": {"mcp-macos-colima": {"command": "uv","args": ["run", "mcp-colima"],"cwd": "/Users/ianscrivener/bin/mcp-servers/mcp-macos-colima"}}}
-  
+{
+    "mcpServers": {
+        "mcp-macos-colima": {
+            "command": "uv",
+            "args": [
+                "run",
+                "mcp-colima"
+            ],
+            "cwd": "/Users/ianscrivener/bin/mcp-servers/mcp-macos-colima"
+        }
+    }
+}
