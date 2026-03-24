@@ -2,6 +2,7 @@
 set -euo pipefail
 
 repo_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 output_file="${repo_dir}/mac_config_snippet.json"
 
 json_escape() {

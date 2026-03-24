@@ -24,5 +24,6 @@ All tools return structured JSON. Error responses follow:
 | `colima_restart` | `colima restart [profile]` | `profile`, `force`, `timeout_seconds` |  |
 | `colima_status` | `colima status [profile] --json` | `profile`, `extended`, `timeout_seconds` | Parses JSON output |
 | `colima_list` | `colima list --json` | `timeout_seconds` | Parses JSON output |
-| `colima_ssh` | `colima ssh [--profile <name>] -- sh -lc <command>` | `profile`, `command`, `timeout_seconds` | One-shot execution only |
+| `colima_ssh` | `colima ssh <profile> -- sh -lc <command>` | `profile`, `command`, `timeout_seconds` | One-shot execution only |
 | `colima_version` | `colima version` | `timeout_seconds` | Plain text output |
+| `colima_update` | `colima update [profile]` | `profile`, `kubernetes`, `timeout_seconds` | Updates runtime components; no full teardown |
