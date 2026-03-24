@@ -1,8 +1,8 @@
 # MCP Client Test Report — Claude Code
 
 **Date:** 2026-03-24  
-**Generated:** 2026-03-24T11:00:35+0000  
-**Duration:** 18.5s  
+**Generated:** 2026-03-24T11:14:47+0000  
+**Duration:** 19.5s  
 
 ## 1. Client Metadata
 
@@ -129,7 +129,7 @@ server: v29.2.1
   ],
   "exit_code": 1,
   "stdout": "",
-  "stderr": "time=\"2026-03-24T22:00:40+11:00\" level=fatal msg=\"colima [profile=does-not-exist] is not running\"",
+  "stderr": "time=\"2026-03-24T22:14:52+11:00\" level=fatal msg=\"colima [profile=does-not-exist] is not running\"",
   "data": null,
   "message": null
 }
