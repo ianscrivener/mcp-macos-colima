@@ -33,5 +33,5 @@ def test_colima_list_via_cli(has_colima):
     cli = ColimaCLI()
     result = cli.run(["list", "--json"], parse_json=True)
     assert result["error"] is False
-    # data should be a list (possibly empty if no profiles exist)
-    assert isinstance(result["data"], list)
+    assert isinstance(result["data"], dict)
+    assert result["data"]["name"] == "default"
